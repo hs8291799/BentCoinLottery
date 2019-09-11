@@ -9,17 +9,22 @@
 
 library(stats)
 
-# Small edit! from class 1!
+#Small edit! from class 1!
+Num_of_flips <- 10
+Num_of_flips2 <- 100
+Win <- 0.1
+UpperSide <- 1
+DownSide <- 0
 
-arr <- array(0,10)
-for (i in 1:10){
-  arr[i] <- if (runif(1) < 0.1) 1 else 0
+Lottery <- array(0,Num_of_flips)
+for (i in 1:Num_of_flips){
+  Lottery[i] <- if (runif(UpperSide) < Win) UpperSide else DownSide
 }
 
-for (j in 1:100){
-  arr <- array(0,10)
-  for (i in 1:10){
-    arr[i] <- if (runif(1) < 0.1) 1 else 0
+for (j in 1:Num_of_flips2){
+  Lottery <- array(0,Num_of_flips)
+  for (i in 1:Num_of_flips){
+    Lottery[i] <- if (runif(UpperSide) < Win) UpperSide else DownSide
   }
-  print(arr)
+  print(Lottery)
 }
